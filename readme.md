@@ -10,6 +10,22 @@ run docker compose on the solution file level (in detached mode):
   docker compose up -d
 ```
 
+## Docker Volumes
+
+As you can see in the docker compose file, we use named volumes in this application to make data persistable on restarts. However, this is not working at the moment!!!
+
+In case you explicitly need to delete a volume in the future, you can find its name by:
+
+```
+  docker volume list
+```
+
+and remove it:
+
+```
+  docker volume rm [volume_name]
+```
+
 ## Dotnet Tools
 
 You can list installed dotnet tools by:
@@ -32,10 +48,24 @@ or update it
   dotnet tool updated dotnet-ef -g
 ```
 
+## More Dotnet CLI commands
+
 create a gitignore file
 
 ```
   dotnet new gitignore
+```
+
+create a webapi project
+
+```
+  dotnet new webapi -o [project-path]
+```
+
+add a dotnet project to the solution
+
+```
+  dotnet sln add [Project]
 ```
 
 ### Dotnet development mode
