@@ -10,6 +10,12 @@ run docker compose on the solution file level (in detached mode):
   docker compose up -d
 ```
 
+You can shutdown the db instances with:
+
+```
+  docker compose down
+```
+
 ## Docker Volumes
 
 As you can see in the docker compose file, we use named volumes in this application to make data persistable on restarts. However, this is not working at the moment!!!
@@ -111,3 +117,8 @@ display name: localhost
 ```
   dotnet ef database drop
 ```
+
+## RabbitMQ
+
+We use RabbitMQ as the event bus technology.
+To access the monitoring server (on port 15672) use 'guest' as the login and password.
